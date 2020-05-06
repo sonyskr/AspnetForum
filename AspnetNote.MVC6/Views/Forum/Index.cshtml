@@ -1,0 +1,23 @@
+﻿<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Topic</th>
+            <th>User</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var note in Model)
+        {
+        <tr>
+            <td>@note.NoteNo</td>
+            <td>
+                <a asp-controller="Forum" asp-action="Detail" asp-route-noteNo="@note.NoteNo">@note.NoteTitle</a>
+            </td>
+            <td>@note.UserNo</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-warning"asp-controller="Forum" asp-action="Add">New Topic</a>
